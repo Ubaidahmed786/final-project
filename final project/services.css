@@ -1,0 +1,212 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.burger {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Services Section Styles */
+.services-section {
+    text-align: center;
+    background-color: #f9f9f9;
+    flex-grow: 1;
+    padding: 2rem 1rem; /* Added padding */
+}
+
+.services-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 12px; /* Slightly larger border radius for smoother edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    height: 100%; /* Allow height to adjust automatically */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.service-card i {
+    font-size: 3rem; /* Larger icon size for better visibility */
+    color: #ff6347;
+    margin-bottom: 1rem;
+}
+
+.service-card h2 {
+    font-size: 2rem; /* Larger title font size */
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center; /* Center align titles */
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center; /* Center align descriptions */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .services-section h1 {
+        font-size: 2rem;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for smaller screens */
+    }
+
+    .service-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+
+    .service-card {
+        padding: 1.5rem;
+        margin: 0 10px; /* Added margin to avoid sticking to edges */
+    }
+
+    .service-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+
+    .service-card i {
+        font-size: 2rem;
+    }
+
+    /* Responsive Navbar */
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .service-card {
+        padding: 1rem;
+        margin: 0 10px; /* Added margin to avoid sticking to edges */
+    }
+
+    .service-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p {
+        font-size: 0.8rem;
+    }
+
+    .service-card i {
+        font-size: 1.8rem;
+    }
+}
